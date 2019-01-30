@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+        <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+        <script src="./bundle.js"></script>
+    </head>
+    <body>
+        <my-element></my-element>
+        <button id="selectiontoggle">Toggle selected</button>
+        <button id="enabledtoggle">Toggle enabled</button>
+
+        <script>
+            document.querySelector('#selectiontoggle').addEventListener('click', function() {
+                var elem = document.querySelector('my-element');
+                elem.selected = !elem.selected;
+                elem.render();
+            });
+            document.querySelector('#enabledtoggle').addEventListener('click', function() {
+                var elem = document.querySelector('my-element');
+                elem.enabled = !elem.enabled;
+                elem.render();
+            });
+        </script>
+    </body>
+</html>
